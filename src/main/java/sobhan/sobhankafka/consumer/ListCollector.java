@@ -8,6 +8,10 @@ public class ListCollector {
 
     public ListCollector(String string) {
         list.add(Integer.valueOf(string));
-        System.out.println(list);
+    }
+
+    @Override
+    public String toString() {
+        return list.toString();
     }
 }
