@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class SumAccountant extends RouteBuilder {
     @Override
     public void configure() throws Exception {
-        from("timer://simple?period=6000&delay=6000")
+        from("timer://simple?period=60000&delay=60000")
                 .setBody(exchange -> {
                             int sum = ListCollector.list.stream().mapToInt(integer -> integer).sum();
                             ListCollector.list.clear();

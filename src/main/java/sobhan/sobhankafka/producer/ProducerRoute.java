@@ -13,7 +13,7 @@ public class ProducerRoute extends RouteBuilder {
 
         Random random = new Random();
 
-        from("timer://simple?period=1000&delay=1000")
+        from("timer://simple?period=10000&delay=10000")
                 .setBody(exchange -> random.nextInt(100))
                 .to("kafka:test?brokers=localhost:9092");
     }
